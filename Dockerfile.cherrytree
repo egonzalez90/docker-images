@@ -1,0 +1,8 @@
+FROM ubuntu:bionic
+
+RUN apt update \
+    && apt install -y cherrytree
+
+ENV DISPLAY :0
+VOLUME /tmp/.X11-unix:/tmp/.X11-unix
+CMD cherrytree
