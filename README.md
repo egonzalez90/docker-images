@@ -17,7 +17,6 @@ docker run --name ghidra \
            --rm \
            -v ~/PROJECT_DATA:/root/ \
            --net=host \
-           --privileged \
            egonzalez90/ghidra:latest
 ```
 ## Run Cherrytree
@@ -33,7 +32,6 @@ docker run --name cherrytree \
            --rm \
            -v ~/LOCAL_CONFIG_DATA:/root/ \
            --net=host \
-           --privileged \
            egonzalez90/cherrytree:latest
 ```
 
