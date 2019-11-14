@@ -3,7 +3,23 @@
 Images at this repo:
 - Cherrytree
 - Dradis CE
+- Ghidra
 
+## Run ghidra
+First allow remote X connections
+```
+xhost +
+```
+
+Create container
+```
+docker run --name ghidra \
+           --rm \
+           -v ~/PROJECT_DATA:/root/ \
+           --net=host \
+           --privileged \
+           egonzalez90/ghidra:latest
+```
 ## Run Cherrytree
 
 First allow remote X connections
@@ -18,7 +34,7 @@ docker run --name cherrytree \
            -v ~/LOCAL_CONFIG_DATA:/root/ \
            --net=host \
            --privileged \
-           cherrytree:latest
+           egonzalez90/cherrytree:latest
 ```
 
 A GUI will popen on the host.
@@ -28,7 +44,7 @@ A GUI will popen on the host.
 Create the container
 
 ```
-docker run --name dradis dradis-ce
+docker run --name dradis egonzalez90/dradis-ce:latest
 ```
 
 Browse to ```localhost:3000```
